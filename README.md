@@ -1,6 +1,7 @@
 This new architecture is based off the RNN architecture, with almost the same speed and memory usage, now has identical loss to the transformer architecture, but O(n^2)->O(n) time complexity!
 
-In almost all modern language models, the transformer architecture is used and is the beating heart of the model. However, the transformer architecture is extremely inefficient when used for long sequences. I will introduce a new RNN-like architecture which I have called matmul and scale RNNs, which has linear time-complexity, opposite to transformer’s quadratic time-complexity. Like the traditional RNNs, the first step is to run the tokens through an embedding layer. Then for each timestep, we update our hidden state using a Scale(token) layer and Matmul(h, token) layer, initializing h at 0. The result is 
+In almost all modern language models, the transformer architecture is used and is the beating heart of the model. However, the transformer architecture is extremely inefficient when used for long sequences. I will introduce a new RNN-like architecture which I have called matmul and scale RNNs, which has linear time-complexity, opposite to transformer’s quadratic time-complexity. 
+<br> Like the traditional RNNs, the first step is to run the tokens through an embedding layer. Then for each timestep, we update our hidden state using a Scale(token) layer and Matmul(h, token) layer, initializing h at 0. The result is 
 H[t] = For each layer: h’ = Silu(h + MatmulLayer(concat(h, scale(token) * H[t-1])))
 Then, like any other network we convert them to logits (like a reverse embedding) and apply softmax.
 
