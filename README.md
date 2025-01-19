@@ -15,6 +15,8 @@ LayerNorm(shape=emb dim)*** <br>
 WHY THIS ARCHITECTURE? <br>
 First of all, transformer’s memory requirements and computational time dramatically increase depending on context length O(n^2) while RNNs have a time complexity of O(n). Secondly, this architecture’s performance is in a different ballpark to RNNs and LSTMs and even comparable to transformers while keeping half or more of the efficiency as vanilla RNNs.
 
+![image](https://github.com/user-attachments/assets/ae905e0e-7615-422b-abf6-2acc356bc1c0)
+
 **Hyperparameters:
 Learning rate = 3e-4,
 Batch Size = 32,
