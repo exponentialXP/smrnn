@@ -28,8 +28,11 @@ Heads (transformer only) = 4,
 Tokenizer = GPT2 (tiktoken),
 Gradient Clipping (On) Max Norm = 1**
 
-| Architecture  | Validation Loss (FineWeb-Edu) |
-| ------------- | ------------- |
-| SMRNN | 5.5 |
-| Transformer  | 5.4 |
-| Vanilla RNN | 7.7 |
+| Architecture  | Validation Loss (FineWeb-Edu) | Non-Embedding Parameters|
+| ------------- | ------------- | ------------- |
+| SMRNN | 5.5 | ~800,000
+| Transformer  | 5.4 | ~3,200,000 
+| Vanilla RNN | 7.7 | ~600,000
+
+**CONCLUSION <br>
+These results show that the model has comparable performance to transformers even with its O(n) compression and having x4 less parameters. However, it is unknown if this architecture will scale up as well as transformers due to the limited amount of compute in this experiment. More scaling, longer seq len and more must be compared to really find out if this architecture can outperform transformers practically in the long run.**
