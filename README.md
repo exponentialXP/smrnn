@@ -9,7 +9,7 @@ Then, like any other network we convert them to logits (like a reverse embedding
 Linear(in_dim=emb dim, out_dim=emb dim), <br>
 LayerNorm(shape=emb dim)*** <br>
 ***Matmul Layer: <br>
-Linear(in_dim=emb dim*2, out_dim=emb dim), <br>
+Linear(in_dim=emb dimx2, out_dim=emb dim), <br>
 LayerNorm(shape=emb dim)*** <br>
 <p>
 WHY THIS ARCHITECTURE? <br>
